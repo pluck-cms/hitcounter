@@ -1,9 +1,6 @@
 <?php
 //Make sure the file isn't accessed directly.
-//defined('IN_PLUCK') or exit('Access denied!');
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+defined('IN_PLUCK') or exit('Access denied!');
 
 require_once 'data/modules/hitcounter/functions.php';
 
@@ -11,7 +8,7 @@ require_once 'data/modules/hitcounter/functions.php';
 		global $lang;
 		$module_page_admin[] = array(
 			'func'  => 'hitcounter_admin',
-			'title' => 'hitcounter admin page' //$lang['search']['title']
+			'title' => 'hitcounter admin page'
 		);
 
 		return $module_page_admin;
