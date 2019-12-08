@@ -1,4 +1,7 @@
 <?php
+//Make sure the file isn't accessed directly.
+defined('IN_PLUCK') or exit('Access denied!');
+
 //{plugin}_info
   function hitcounter_info() {
     $module_info = array(

@@ -2,14 +2,15 @@
 defined('IN_PLUCK') or exit('Access denied!');
 //{pluginname}_theme_main()
 
+require_once 'data/modules/hitcounter/functions.php';
+
 function hitcounter_theme_main() {
 	echo getMessage();
 }
 
 function getMessage() {
-
 	$countdir = 'data/settings/modules/hitcounter/';
-	$countlog = $countdir . "countlog.txt";
+	$countlog = $countdir . 'countlog.txt';
     
 //Make directory  settings (if it doesn't exist).
 	if (!file_exists($countdir)) {
@@ -27,7 +28,7 @@ function getMessage() {
 	$count = fgets($datei,1000);
 	fclose($datei);
 	$count = $count + 1 ;
-	$message = "<p>" . $count . " hits </p>" ;
+	$message = '<p>'. $count . ' '. hitcounter_word() . '</p>' ;
 
 // opens countlog.txt to change new hit number
 	$datei = fopen($countlog,"w");
@@ -36,4 +37,3 @@ function getMessage() {
 
 	return $message;
 }
-
