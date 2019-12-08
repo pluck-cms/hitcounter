@@ -8,7 +8,7 @@ require_once 'data/modules/hitcounter/functions.php';
 		global $lang;
 		$module_page_admin[] = array(
 			'func'  => 'hitcounter_admin',
-			'title' => 'hitcounter admin page'
+			'title' => $lang['hitcounter']['title']
 		);
 
 		return $module_page_admin;
@@ -18,12 +18,12 @@ require_once 'data/modules/hitcounter/functions.php';
 			global $cont1, $lang;
 	?>
 		<p>
-			<strong><?php echo 'zarzadzanie modułem hitcounter'; ?></strong>
+			<strong><?php echo $lang['hitcounter']['manage']; ?></strong>
 		</p>
 		<br />
-			<label class="kop2" for="cont1"><?php echo 'wpisz słowo'; ?></label>
+			<label class="kop2" for="cont1"><?php echo $lang['hitcounter']['write_word']; ?></label>
 			<form method="post" action="">
-				<span class="kop4"><?php echo 'wpisz słowo które chcesz by pojawiło się na stronie - to pole może być puste'; ?></span><br />
+				<span class="kop4"><?php echo $lang['hitcounter']['write_word_info']; ?></span><br />
 				<input name="cont1" id="cont1" type="text" value="<?php echo hitcounter_word(); ?>" />
 				<input type="submit" name="submit" value="<?php echo $lang['general']['save']; ?>" />
 			</form>
